@@ -1,9 +1,9 @@
-defmodule Rocketpay.MixProject do
+defmodule Arcanumpay.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :rocketpay,
+      app: :arcanumpay,
       version: "0.1.0",
       elixir: "~> 1.7",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -19,7 +19,7 @@ defmodule Rocketpay.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {Rocketpay.Application, []},
+      mod: {Arcanumpay.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end
@@ -43,7 +43,8 @@ defmodule Rocketpay.MixProject do
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:credo, "~> 1.5", only: [:dev, :test], runtime: false}
+      {:credo, "~> 1.5", only: [:dev, :test], runtime: false},
+      {:pbkdf2_elixir, "~> 1.3"}
     ]
   end
 

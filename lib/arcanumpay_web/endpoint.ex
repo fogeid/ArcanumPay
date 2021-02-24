@@ -1,16 +1,16 @@
-defmodule RocketpayWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :rocketpay
+defmodule ArcanumpayWeb.Endpoint do
+  use Phoenix.Endpoint, otp_app: :arcanumpay
 
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
   # Set :encryption_salt if you would also like to encrypt it.
   @session_options [
     store: :cookie,
-    key: "_rocketpay_key",
-    signing_salt: "1uwe2ijM"
+    key: "_arcanumpay_key",
+    signing_salt: "HvR6CXbQ"
   ]
 
-  socket "/socket", RocketpayWeb.UserSocket,
+  socket "/socket", ArcanumpayWeb.UserSocket,
     websocket: true,
     longpoll: false
 
@@ -22,7 +22,7 @@ defmodule RocketpayWeb.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
-    from: :rocketpay,
+    from: :arcanumpay,
     gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
@@ -30,7 +30,7 @@ defmodule RocketpayWeb.Endpoint do
   # :code_reloader configuration of your endpoint.
   if code_reloading? do
     plug Phoenix.CodeReloader
-    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :rocketpay
+    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :arcanumpay
   end
 
   plug Phoenix.LiveDashboard.RequestLogger,
@@ -48,5 +48,5 @@ defmodule RocketpayWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
-  plug RocketpayWeb.Router
+  plug ArcanumpayWeb.Router
 end

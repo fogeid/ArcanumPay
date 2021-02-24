@@ -1,5 +1,5 @@
-defmodule Rocketpay.Repo do
+defmodule Arcanumpay.Repo do
   use Ecto.Repo,
-    otp_app: :rocketpay,
+    otp_app: :arcanumpay,
     adapter: Ecto.Adapters.Postgres
 end

@@ -7,16 +7,20 @@
 # General application configuration
 use Mix.Config
 
-config :rocketpay,
-  ecto_repos: [Rocketpay.Repo]
+config :arcanumpay,
+  ecto_repos: [Arcanumpay.Repo]
 
 # Configures the endpoint
-config :rocketpay, RocketpayWeb.Endpoint,
+config :arcanumpay, ArcanumpayWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "KNb8WRwsqhb6AfSZikmtrfk22sMiQAWv4E56iJCOkxnH0vw0y3GQO11vU9d6nvYX",
-  render_errors: [view: RocketpayWeb.ErrorView, accepts: ~w(json), layout: false],
-  pubsub_server: Rocketpay.PubSub,
-  live_view: [signing_salt: "A/RTjLn4"]
+  secret_key_base: "0HIYl+CdEcpmVVlDQE/sS2z/XIjSGVcGwBKV1Q7ohlF/9vHqv7RwyXJRe/6ck5lm",
+  render_errors: [view: ArcanumpayWeb.ErrorView, accepts: ~w(json), layout: false],
+  pubsub_server: Arcanumpay.PubSub,
+  live_view: [signing_salt: "jvSw5tvS"]
+
+config :arcanumpay, Arcanumpay.Repo,
+  migration_primary_key: [type: :binary_id],
+  migration_foreign_key: [type: :binary_id]
 
 # Configures Elixir's Logger
 config :logger, :console,

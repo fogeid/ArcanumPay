@@ -1,10 +1,10 @@
 use Mix.Config
 
 # Configure your database
-config :rocketpay, Rocketpay.Repo,
+config :arcanumpay, Arcanumpay.Repo,
   username: "postgres",
   password: "admin",
-  database: "rocketpay_dev",
+  database: "arcanumpay_dev",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
@@ -15,7 +15,7 @@ config :rocketpay, Rocketpay.Repo,
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with webpack to recompile .js and .css sources.
-config :rocketpay, RocketpayWeb.Endpoint,
+config :arcanumpay, ArcanumpayWeb.Endpoint,
   http: [port: 4000],
   debug_errors: true,
   code_reloader: true,

@@ -1,12 +1,12 @@
-defmodule RocketpayWeb do
+defmodule ArcanumpayWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, views, channels and so on.
 
   This can be used in your application as:
 
-      use RocketpayWeb, :controller
-      use RocketpayWeb, :view
+      use ArcanumpayWeb, :controller
+      use ArcanumpayWeb, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -19,19 +19,19 @@ defmodule RocketpayWeb do
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: RocketpayWeb
+      use Phoenix.Controller, namespace: ArcanumpayWeb
 
       import Plug.Conn
-      import RocketpayWeb.Gettext
-      alias RocketpayWeb.Router.Helpers, as: Routes
+      import ArcanumpayWeb.Gettext
+      alias ArcanumpayWeb.Router.Helpers, as: Routes
     end
   end
 
   def view do
     quote do
       use Phoenix.View,
-        root: "lib/rocketpay_web/templates",
-        namespace: RocketpayWeb
+        root: "lib/arcanumpay_web/templates",
+        namespace: ArcanumpayWeb
 
       # Import convenience functions from controllers
       import Phoenix.Controller,
@@ -54,7 +54,7 @@ defmodule RocketpayWeb do
   def channel do
     quote do
       use Phoenix.Channel
-      import RocketpayWeb.Gettext
+      import ArcanumpayWeb.Gettext
     end
   end
 
@@ -63,9 +63,9 @@ defmodule RocketpayWeb do
       # Import basic rendering functionality (render, render_layout, etc)
       import Phoenix.View
 
-      import RocketpayWeb.ErrorHelpers
-      import RocketpayWeb.Gettext
-      alias RocketpayWeb.Router.Helpers, as: Routes
+      import ArcanumpayWeb.ErrorHelpers
+      import ArcanumpayWeb.Gettext
+      alias ArcanumpayWeb.Router.Helpers, as: Routes
     end
   end
 

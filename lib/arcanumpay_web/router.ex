@@ -1,14 +1,14 @@
-defmodule RocketpayWeb.Router do
-  use RocketpayWeb, :router
+defmodule ArcanumpayWeb.Router do
+  use ArcanumpayWeb, :router
 
   pipeline :api do
     plug :accepts, ["json"]
   end
 
-  scope "/api", RocketpayWeb do
+  scope "/api", ArcanumpayWeb do
     pipe_through :api
 
-    get "/", WelcomeController, :index
+    get "/:filename", WelcomeController, :index
   end
 
   # Enables LiveDashboard only for development
@@ -23,7 +23,7 @@ defmodule RocketpayWeb.Router do
 
     scope "/" do
       pipe_through [:fetch_session, :protect_from_forgery]
-      live_dashboard "/dashboard", metrics: RocketpayWeb.Telemetry
+      live_dashboard "/dashboard", metrics: ArcanumpayWeb.Telemetry
     end
   end
 end

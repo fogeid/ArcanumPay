@@ -1,4 +1,4 @@
-defmodule RocketpayWeb.Telemetry do
+defmodule ArcanumpayWeb.Telemetry do
   use Supervisor
   import Telemetry.Metrics
 
@@ -31,11 +31,11 @@ defmodule RocketpayWeb.Telemetry do
       ),
 
       # Database Metrics
-      summary("rocketpay.repo.query.total_time", unit: {:native, :millisecond}),
-      summary("rocketpay.repo.query.decode_time", unit: {:native, :millisecond}),
-      summary("rocketpay.repo.query.query_time", unit: {:native, :millisecond}),
-      summary("rocketpay.repo.query.queue_time", unit: {:native, :millisecond}),
-      summary("rocketpay.repo.query.idle_time", unit: {:native, :millisecond}),
+      summary("arcanumpay.repo.query.total_time", unit: {:native, :millisecond}),
+      summary("arcanumpay.repo.query.decode_time", unit: {:native, :millisecond}),
+      summary("arcanumpay.repo.query.query_time", unit: {:native, :millisecond}),
+      summary("arcanumpay.repo.query.queue_time", unit: {:native, :millisecond}),
+      summary("arcanumpay.repo.query.idle_time", unit: {:native, :millisecond}),
 
       # VM Metrics
       summary("vm.memory.total", unit: {:byte, :kilobyte}),
@@ -49,7 +49,7 @@ defmodule RocketpayWeb.Telemetry do
     [
       # A module, function and arguments to be invoked periodically.
       # This function must call :telemetry.execute/3 and a metric must be added above.
-      # {RocketpayWeb, :count_users, []}
+      # {ArcanumpayWeb, :count_users, []}
     ]
   end
 end
