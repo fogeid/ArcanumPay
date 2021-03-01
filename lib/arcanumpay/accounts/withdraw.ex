@@ -1,11 +1,11 @@
-defmodule Arcanumpay.Accounts.Deposit do
+defmodule Arcanumpay.Accounts.Withdraw do
 
     alias Arcanumpay.Accounts.Operation
     alias Arcanumpay.Repo
 
     def call(params) do
         params
-        |> Operation.call(:deposit)
+        |> Operation.call(:withdraw)
         |> run_transaction()
     end   
 
