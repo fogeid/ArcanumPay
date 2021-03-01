@@ -14,7 +14,7 @@ defmodule Arcanumpay.Accounts.Deposit do
 
     defp get_account(repo, id) do
         case repo.get(Account, id) do
-            nil -> {:error, "Account, not found!"}
+            nil -> {:error, "Account not found!"}
             account -> {:ok, account}
         end
     end
@@ -32,15 +32,16 @@ defmodule Arcanumpay.Accounts.Deposit do
     end
 
     defp handle_cast({:ok, value}, balance), do: Decimal.add(value, balance)
-    defp handle_cast({:error, _balance}), do: {:error, "Invalid deposit value!"}
+    defp handle_cast(:error, _balance), do: {:error, "Invalid deposit value!"}
 
     defp update_account({:error, _reason} = error, _repo, _account), do: error
+    
     defp update_account(value, repo, account) do
         params = %{balance: value}
 
         account
         |> Account.changeset(params)
-        |> repo.update
+        |> repo.update()
     end
 
     defp run_transaction(multi) do
