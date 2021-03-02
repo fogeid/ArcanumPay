@@ -2,6 +2,7 @@ defmodule ArcanumpayWeb.AccountsController do
     use ArcanumpayWeb, :controller
 
     alias Arcanumpay.Account
+    alias Arcanumpay.Accounts.Transactions.Response, as: TransactionResponse
 
     action_fallback ArcanumpayWeb.FallbackController
     
@@ -22,7 +23,7 @@ defmodule ArcanumpayWeb.AccountsController do
     end
 
     def transaction(conn, params) do
-      with {:ok, %{} = transaction} <- Arcanumpay.transaction(params) do
+      with {:ok, %TransactionResponse{} = transaction} <- Arcanumpay.transaction(params) do
         conn
         |> put_status(:ok)
         |> render("transaction.json", transaction: transaction)

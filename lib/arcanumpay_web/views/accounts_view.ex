@@ -1,5 +1,7 @@
 defmodule ArcanumpayWeb.AccountsView do
+
     alias Arcanumpay.Account
+    alias Arcanumpay.Accounts.Transactions.Response, as: TransactionResponse
 
     def render("update.json", %{account: %Account{id: account_id, balance: balance}}) do
         %{
@@ -11,7 +13,7 @@ defmodule ArcanumpayWeb.AccountsView do
         }
     end
     def render("transaction.json", %{
-            transaction: %{to_account: to_account, from_account: from_account}
+            transaction: %TransactionResponse{to_account: to_account, from_account: from_account}
         }) do
         %{
             message: "Transaction done successfuly",
